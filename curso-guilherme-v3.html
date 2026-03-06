@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNICANA | Cadeia Nacional Produtiva da Cachaça</title>
+<meta name="description" content="A UNICANA é a Cadeia Nacional Produtiva da Cachaça: ecossistema exclusivo para produtores, distribuidores, varejistas, fornecedores e parceiros do setor.">
+<meta name="keywords" content="UNICANA, cachaça, cadeia produtiva, produtores, distribuidores, atacadistas, varejo, fornecedores, anuidade">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#C9A84C;--gold-dim:#8B6D2A;--black:#060608;--surface:#0D0C10;--surface2:#141318;--surface3:#1C1A22;--text:#F0EAD6;--muted:#9A9486;--border:rgba(201,168,76,.14)}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--black);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+img{max-width:100%;height:auto}
+a{color:inherit}
+.cursor{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transition:transform .1s;mix-blend-mode:difference}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid rgba(201,168,76,.5);border-radius:50%;pointer-events:none;z-index:9998;transition:all .15s}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:.5}
+.scroll-line{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),#e8c97a);z-index:9999}
+.topbar{background:var(--gold);color:var(--black);text-align:center;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 64px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(6,6,8,.95);backdrop-filter:blur(24px);z-index:100}
+.nav-logo{display:flex;align-items:center;gap:14px}
+.nav-logo img{width:44px;height:44px;object-fit:cover;border-radius:50%;border:1px solid var(--gold)}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--gold)}
+.nav-cta{font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--black);background:var(--gold);padding:11px 26px;text-decoration:none;transition:all .2s}
+.nav-cta:hover{opacity:.9;transform:translateY(-1px)}
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:100px 64px;position:relative;z-index:2}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform 8s ease}
+.hero-right:hover img{transform:scale(1.04)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(6,6,8,.25) 40%,transparent 70%),linear-gradient(180deg,transparent 55%,var(--black) 100%)}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;z-index:1}
+.hero-glow{position:absolute;top:-150px;left:-150px;width:700px;height:700px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);z-index:1;pointer-events:none}
+.hero-eyebrow{font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Anton',sans-serif;font-size:clamp(52px,7vw,106px);line-height:.93;text-transform:uppercase}
+.line-gold{color:var(--gold);display:block}
+.line-outline{-webkit-text-stroke:2px var(--text);color:transparent;display:block}
+.hero-sub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.8;margin-top:28px}
+.hero-sub strong{color:var(--text);font-weight:500}
+.hero-actions{display:flex;align-items:center;gap:22px;margin-top:42px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--black);font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:18px 36px;text-decoration:none;transition:all .3s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(201,168,76,.35)}
+.btn-ghost{font-size:13px;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:4px;transition:color .2s,border-color .2s}
+.btn-ghost:hover{color:var(--text);border-color:var(--muted)}
+.hero-badge{position:absolute;bottom:48px;left:64px;border:1px solid var(--border);padding:20px 28px;z-index:3;background:rgba(6,6,8,.8);backdrop-filter:blur(12px)}
+.badge-label{font-size:12px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px}
+.badge-price{font-family:'Anton',sans-serif;font-size:46px;color:var(--gold);line-height:1}
+.badge-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.proof-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 64px;display:flex;justify-content:space-between;align-items:center;background:var(--surface)}
+.proof-item{display:flex;flex-direction:column;gap:6px}
+.proof-num{font-family:'Anton',sans-serif;font-size:34px;color:var(--gold);line-height:1}
+.proof-desc{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase}
+.proof-divider{width:1px;height:44px;background:var(--border)}
+section{padding:120px 64px}
+.section-label{font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;display:flex;align-items:center;gap:16px;margin-bottom:40px}
+.section-label::before{content:'';width:30px;height:1px;background:var(--gold)}
+.section-title{font-family:'Anton',sans-serif;font-size:clamp(36px,4.5vw,64px);line-height:.95;text-transform:uppercase;max-width:980px;margin-bottom:24px}
+.section-title em{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);font-size:1.12em;text-transform:none}
+.section-text{font-size:17px;color:var(--muted);line-height:1.85;max-width:900px}
+.highlight-block{margin-top:34px;border-left:3px solid var(--gold);padding:22px 24px;background:rgba(201,168,76,.06);font-size:22px;line-height:1.5;color:var(--text)}
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:54px}
+.card{background:var(--surface);padding:42px 32px}
+.card h3{font-family:'Anton',sans-serif;font-size:24px;line-height:1.1;text-transform:uppercase;margin-bottom:16px}
+.card p{font-size:15px;line-height:1.8;color:var(--muted)}
+.gallery-section{background:var(--black)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:48px}
+.gallery-item{position:relative;overflow:hidden;border:1px solid var(--border);background:var(--surface)}
+.gallery-item img{width:100%;height:340px;object-fit:cover;display:block;transition:transform .5s ease}
+.gallery-item:hover img{transform:scale(1.04)}
+.gallery-cap{position:absolute;left:12px;bottom:12px;background:rgba(6,6,8,.8);border:1px solid var(--border);padding:6px 10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text)}
+.profiles-section{background:var(--surface2)}
+.profiles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:54px}
+.profile-card{background:var(--surface);padding:40px 34px}
+.profile-card h3{font-family:'Anton',sans-serif;font-size:28px;line-height:1.05;text-transform:uppercase;margin-bottom:14px}
+.profile-card p{font-size:15px;line-height:1.8;color:var(--muted)}
+.profile-benefit{margin-top:16px;color:var(--text);font-weight:500}
+.benefits-section{background:var(--surface)}
+.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:54px}
+.benefit-item{padding:32px 28px;background:var(--surface2)}
+.benefit-item h4{font-family:'Anton',sans-serif;font-size:21px;text-transform:uppercase;line-height:1.15;margin-bottom:12px}
+.benefit-item p{font-size:15px;line-height:1.75;color:var(--muted)}
+.steps-section{background:var(--black)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:54px}
+.step-card{padding:34px 24px;background:var(--surface)}
+.step-n{font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-bottom:12px}
+.step-title{font-family:'Anton',sans-serif;font-size:24px;text-transform:uppercase;margin-bottom:10px;line-height:1.05}
+.step-text{font-size:15px;line-height:1.75;color:var(--muted)}
+.pricing-section{background:var(--black);text-align:center;position:relative;overflow:hidden}
+.pricing-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);pointer-events:none}
+.pricing-card{max-width:720px;margin:60px auto 0;border:1px solid var(--border);padding:64px;position:relative;background:var(--surface)}
+.pricing-card::before{content:'';position:absolute;top:-1px;left:8%;right:8%;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.pricing-label-top{font-size:12px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;margin-bottom:22px}
+.pricing-main{font-family:'Anton',sans-serif;font-size:90px;color:var(--text);line-height:1;margin-bottom:6px}
+.pricing-main sup{font-size:36px;vertical-align:super;color:var(--gold)}
+.pricing-period{font-size:15px;color:var(--muted);letter-spacing:.1em;margin-bottom:34px}
+.pricing-includes{list-style:none;text-align:left;margin-bottom:34px;display:flex;flex-direction:column;gap:12px}
+.pricing-includes li{font-size:15px;color:var(--muted);display:flex;align-items:flex-start;gap:10px;line-height:1.7}
+.pricing-includes li::before{content:'✅';flex-shrink:0}
+.pricing-note{font-size:13px;color:var(--muted);margin-top:16px}
+.manifesto{background:var(--surface2)}
+.manifesto-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.manifesto-image{position:sticky;top:120px}
+.manifesto-image img{width:100%;height:660px;object-fit:cover;border:1px solid var(--border)}
+.manifesto-text{font-size:17px;line-height:1.9;color:var(--muted)}
+.faq-section{background:var(--surface)}
+.obj-grid{border:1px solid var(--border);margin-top:56px}
+.obj-item{border-bottom:1px solid var(--border);overflow:hidden}
+.obj-item:last-child{border-bottom:none}
+.obj-q{padding:26px 40px;font-family:'Anton',sans-serif;font-size:19px;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:color .2s;text-transform:uppercase}
+.obj-q:hover{color:var(--gold)}
+.obj-q .plus{font-size:22px;color:var(--gold);transition:transform .3s;flex-shrink:0;margin-left:20px;font-weight:300}
+.obj-a{max-height:0;overflow:hidden;transition:max-height .4s}
+.obj-a.open{max-height:400px}
+.obj-a-inner{padding:0 40px 28px;font-size:16px;color:var(--muted);line-height:1.8;border-left:2px solid var(--gold);margin:0 40px 28px}
+.obj-item.active .plus{transform:rotate(45deg)}
+.final-cta{padding:140px 64px;text-align:center;background:var(--black);position:relative;overflow:hidden}
+.final-cta-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.03) 1px,transparent 1px);background-size:80px 80px}
+.final-title{font-family:'Anton',sans-serif;font-size:clamp(40px,6.5vw,84px);line-height:.93;max-width:980px;margin:0 auto 20px;text-transform:uppercase;position:relative}
+.final-sub{font-size:17px;color:var(--muted);max-width:760px;margin:0 auto 48px;line-height:1.8;position:relative}
+.final-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);padding:18px 30px;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--text)}
+.final-mini{font-size:12px;color:var(--muted);margin-top:18px;position:relative;letter-spacing:.08em;text-transform:uppercase}
+footer{border-top:1px solid var(--border);padding:50px 64px;background:var(--surface2)}
+.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:24px}
+.footer-brand img{width:52px;height:52px;object-fit:contain}
+.footer-brand-text{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--gold)}
+.footer-sub{font-size:14px;color:var(--muted);margin-bottom:30px}
+.footer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.footer-col-title{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;margin-bottom:12px}
+.footer-col p,.footer-col a{font-size:14px;color:var(--muted);line-height:1.8;text-decoration:none}
+.footer-copy{font-size:12px;color:var(--muted);margin-top:34px;border-top:1px solid var(--border);padding-top:24px}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+@media(max-width:1160px){
+  .cards-3,.steps-grid{grid-template-columns:1fr 1fr}
+  .profiles-grid,.benefits-grid,.manifesto-grid{grid-template-columns:1fr}
+  .manifesto-image{position:static}
+  .manifesto-image img{height:420px}
+}
+@media(max-width:960px){
+  nav{padding:16px 24px}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:12px 24px 32px;justify-content:flex-start}
+  .hero-right{height:70vw}
+  .hero-eyebrow{margin-bottom:16px}
+  .hero-badge{display:none}
+  .hero-actions{margin-top:28px}
+  section{padding:80px 24px}
+  .proof-strip{padding:18px 24px;flex-wrap:wrap;gap:18px}
+  .steps-grid,.cards-3,.profiles-grid,.benefits-grid,.footer-grid,.gallery-grid{grid-template-columns:1fr}
+  .pricing-card{padding:40px 24px}
+  .pricing-main{font-size:68px}
+  .final-cta{padding:100px 24px}
+  footer{padding:44px 24px}
+  .obj-q{font-size:14px;padding:20px 24px}
+  .obj-a-inner{margin:0 24px 24px;padding:0 0 0 14px}
+}
+@media(max-width:600px){
+  nav{flex-direction:column;gap:12px;align-items:flex-start}
+  .nav-cta{width:100%;text-align:center}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-secondary{justify-content:center}
+  .proof-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .proof-divider{display:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="scroll-line" id="scrollLine"></div>
+
+<div class="topbar">Ecossistema exclusivo para negócios da cachaça brasileira</div>
+
+<nav>
+  <div class="nav-logo">
+    <img src="LOGO.png" alt="Logo UNICANA">
+    <span class="nav-logo-text">UNICANA</span>
+  </div>
+  <a href="#adesao" class="nav-cta">Quero fazer parte</a>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">Cadeia nacional produtiva da cachaça</div>
+    <h1 class="hero-title"><span>Mais de 250</span><span class="line-gold">empresários unidos</span><span class="line-outline">pela cachaça mais famosa do mundo</span></h1>
+    <p class="hero-sub">A UNICANA é a Cadeia Nacional Produtiva da Cachaça — um ecossistema exclusivo de negócios onde produtores, distribuidores, fornecedores e parceiros do setor se encontram, negociam e crescem juntos. <strong>Estrutura profissional. Rede real. Resultado concreto.</strong></p>
+    <div class="hero-actions">
+      <a href="#adesao" class="btn-primary">Quero fazer parte</a>
+      <a href="#como-funciona" class="btn-ghost">Como funciona</a>
+    </div>
+  </div>
+  <div class="hero-right"><img src="novasfotos/777ee01c-1d89-47b9-a17b-c4d485d4729e.png" alt="Empresários do setor de cachaça"></div>
+  <div class="hero-badge">
+    <div class="badge-label">Rede ativa no Brasil</div>
+    <div class="badge-price">250+</div>
+    <div class="badge-sub">Empresários conectados</div>
+  </div>
+</section>
+
+<div class="proof-strip">
+  <div class="proof-item"><span class="proof-num">250+</span><span class="proof-desc">Empresários ativos na rede</span></div>
+  <div class="proof-divider"></div>
+  <div class="proof-item"><span class="proof-num">26</span><span class="proof-desc">Estados com membros representados</span></div>
+  <div class="proof-divider"></div>
+  <div class="proof-item"><span class="proof-num">100%</span><span class="proof-desc">Foco no setor de cachaça</span></div>
+  <div class="proof-divider"></div>
+  <div class="proof-item"><span class="proof-num">1</span><span class="proof-desc">Ecossistema exclusivo no Brasil</span></div>
+</div>
+
+<section class="reveal" id="problema">
+  <div class="section-label">Seção 2</div>
+  <h2 class="section-title">O setor da cachaça movimenta bilhões — mas ainda opera de forma fragmentada.</h2>
+  <p class="section-text">O Brasil é o maior produtor de cachaça do mundo. São mais de 40 mil marcas registradas, uma produção anual superior a 700 milhões de litros e um setor que emprega diretamente mais de 600 mil pessoas em todo o país. A cachaça é, sem exagero, um dos maiores patrimônios culturais e econômicos do Brasil.<br><br>Mas apesar de toda essa força, o setor ainda sofre com um problema estrutural grave: a falta de conexão entre os seus próprios agentes.<br><br>Produtores que não conhecem distribuidores qualificados. Distribuidores que buscam produtos diferenciados sem saber onde encontrar. Fornecedores de embalagens, barris, rótulos e insumos que não chegam até quem precisa. Prestadores de serviço — agências, consultores, transportadoras, advogados especializados — sem acesso ao público certo. Varejistas, bares e restaurantes que querem trabalhar com cachaça de qualidade mas não têm canal direto com os produtores.<br><br>O resultado disso é simples: negócios que não acontecem. Dinheiro que fica na mesa. Potencial desperdiçado.<br><br>A UNICANA nasceu para acabar com isso.</p>
+  <div class="highlight-block">"Não falta mercado para a cachaça brasileira. Falta estrutura para quem está dentro dele."</div>
+</section>
+
+<section class="benefits-section reveal" id="o-que-e">
+  <div class="section-label">Seção 3</div>
+  <h2 class="section-title">A cadeia produtiva nacional da cachaça, agora com estrutura, identidade e propósito.</h2>
+  <p class="section-text">A UNICANA é uma rede exclusiva de empresários do setor de cachaça — organizada, formalizada e focada em um único objetivo: fazer negócio acontecer entre quem já está no setor.<br><br>O grupo já existia. Ao longo dos últimos anos, mais de 250 empresários de todo o Brasil foram se conectando de forma orgânica, trocando contatos, indicando fornecedores, fechando parcerias. A força da rede era real — mas a estrutura ainda era informal.<br><br>Chegou a hora de mudar isso.<br><br>A UNICANA é a evolução natural dessa comunidade: um ambiente profissional, com cadastro seletivo, anuidade acessível, regras claras de participação, plataforma de visibilidade para todos os membros e uma gestão transparente e comprometida com o crescimento coletivo.<br><br>Não somos uma associação burocrática. Somos um ecossistema vivo de negócios.<br><br>Aqui, cada membro é simultaneamente um comprador, um vendedor e um parceiro em potencial para todos os outros. A lógica é simples: quando a rede cresce, todo mundo cresce junto.</p>
+  <div class="cards-3">
+    <article class="card reveal reveal-d1">
+      <h3>🤝 Conexão qualificada</h3>
+      <p>Todo membro da UNICANA passou por um processo de adesão. Isso significa que quando você está aqui, está cercado de profissionais sérios, que conhecem o setor e estão dispostos a fazer negócio de verdade. Sem spam. Sem curiosos. Só empresários.</p>
+    </article>
+    <article class="card reveal reveal-d2">
+      <h3>📈 Negócios reais</h3>
+      <p>A UNICANA não é um grupo de conteúdo. É um ambiente de transações. Compra, venda, parceria, contrato, indicação — tudo isso acontece dentro da rede, entre pessoas que já se conhecem e já confiam umas nas outras porque fazem parte do mesmo ecossistema.</p>
+    </article>
+    <article class="card reveal reveal-d3">
+      <h3>🏆 Representatividade nacional</h3>
+      <p>Com membros em mais de 26 estados, a UNICANA tem o alcance que seu negócio precisa para crescer além das fronteiras regionais. Seja você um pequeno produtor artesanal do interior de Minas ou uma distribuidora com operação em múltiplos estados — sua voz tem peso aqui.</p>
+    </article>
+  </div>
+</section>
+
+<section class="gallery-section reveal" id="galeria">
+  <div class="section-label">Galeria UNICANA</div>
+  <h2 class="section-title">Imagens da força e do posicionamento da nossa cadeia produtiva.</h2>
+  <div class="gallery-grid">
+    <article class="gallery-item"><img src="b6eaec3b-dcfe-4900-9100-f6e740d89dd4.jfif" alt="Cenário institucional 1"><span class="gallery-cap">Rede nacional</span></article>
+    <article class="gallery-item"><img src="65e32c4b-eeee-41bd-8b6d-b5aaa812862c.jfif" alt="Cenário institucional 2"><span class="gallery-cap">Conexão comercial</span></article>
+    <article class="gallery-item"><img src="41cbaf1b-8c17-4227-9ebb-47d2053a0d31.jfif" alt="Cenário institucional 3"><span class="gallery-cap">Representatividade</span></article>
+    <article class="gallery-item"><img src="novasfotos/9140019b-9a8f-4330-b031-722e5d727386.png" alt="Imagem premium 1"><span class="gallery-cap">Posicionamento premium</span></article>
+    <article class="gallery-item"><img src="novasfotos/64042826-8615-4124-b9a8-977bc354fd29.png" alt="Imagem premium 2"><span class="gallery-cap">Marca e estilo</span></article>
+    <article class="gallery-item"><img src="novasfotos/f4d29d8e-88f6-460c-a194-e5118f4b6850.png" alt="Imagem premium 3"><span class="gallery-cap">Valor percebido</span></article>
+  </div>
+</section>
+
+<section class="profiles-section reveal" id="quem-faz-parte">
+  <div class="section-label">Seção 4</div>
+  <h2 class="section-title">A UNICANA reúne todos os elos da cadeia produtiva.</h2>
+  <p class="section-text">Se o seu negócio tem qualquer relação com a cachaça brasileira, seu lugar é aqui.</p>
+  <div class="profiles-grid">
+    <article class="profile-card"><h3>🌾 Produtor / Alambicador</h3><p>Você dedica anos ao processo de produção, envelhecimento e refinamento da sua cachaça. Mas produzir bem não é suficiente — você precisa de canais de distribuição, visibilidade e parceiros que valorizem o que você faz.<br><br>Na UNICANA, você tem acesso direto a distribuidores, varejistas e compradores que já conhecem e respeitam o produto artesanal. Sem intermediários desnecessários. Sem negociação no escuro.</p><p class="profile-benefit">O que você ganha: distribuição, visibilidade, parcerias comerciais e representatividade do seu produto dentro do setor.</p></article>
+    <article class="profile-card"><h3>🚛 Distribuidor / Atacadista</h3><p>Você é o elo que leva a cachaça do produtor ao consumidor final — e sabe melhor do que ninguém o quanto é difícil encontrar bons produtos, manter relacionamento com produtores confiáveis e ampliar o portfólio de forma consistente.<br><br>Na UNICANA, você tem acesso a um catálogo vivo de produtores de todo o Brasil, com diferentes perfis, regiões e estilos de produto. Tudo dentro de uma rede onde a confiança já está estabelecida.</p><p class="profile-benefit">O que você ganha: acesso a novos produtores, expansão de portfólio, conexão direta sem atravessadores.</p></article>
+    <article class="profile-card"><h3>🏪 Varejista / Bar / Restaurante / Loja especializada</h3><p>Você quer oferecer ao seu cliente cachaças de qualidade, com história e identidade — mas encontrar fornecedores confiáveis, conseguir condições comerciais justas e manter o abastecimento regular é um desafio constante.<br><br>A UNICANA te coloca em contato direto com produtores e distribuidores que querem exatamente o que você tem para oferecer: um ponto de venda que valoriza o produto.</p><p class="profile-benefit">O que você ganha: fornecedores qualificados, condições exclusivas para membros, acesso a lançamentos e produtos diferenciados.</p></article>
+    <article class="profile-card"><h3>🔧 Fornecedor de insumos e serviços</h3><p>Você fornece embalagens, barris, rolhas, rótulos, insumos de produção, equipamentos, serviços de marketing, design, logística, contabilidade, jurídico, consultoria ou qualquer outra solução voltada para o setor.<br><br>O problema é sempre o mesmo: chegar até quem decide. Na UNICANA, você não precisa procurar o seu cliente — ele já está aqui, e está aberto para fazer negócio com quem entende do setor.</p><p class="profile-benefit">O que você ganha: visibilidade qualificada, geração de leads dentro do setor, posicionamento como referência para o mercado.</p></article>
+    <article class="profile-card"><h3>✈️ Exportador / Importador / Parceiro internacional</h3><p>A cachaça é o destilado mais produzido do Brasil e tem crescimento consistente no mercado internacional — especialmente na Europa, EUA e Ásia. Se você trabalha com exportação ou quer trazer parceiros de fora para dentro do ecossistema, a UNICANA é o ponto de entrada.</p><p class="profile-benefit">O que você ganha: conexão com produtores prontos para exportar, rede de parceiros com visão de mercado global, suporte para internacionalização.</p></article>
+    <article class="profile-card"><img src="novasfotos/9140019b-9a8f-4330-b031-722e5d727386.png" alt="Rede nacional UNICANA" style="width:100%;height:100%;object-fit:cover;border:1px solid var(--border)"></article>
+  </div>
+</section>
+
+<section class="benefits-section reveal" id="beneficios">
+  <div class="section-label">Seção 5</div>
+  <h2 class="section-title">Tudo o que está incluído na sua anuidade.</h2>
+  <p class="section-text">Um investimento anual que se paga na primeira parceria fechada.</p>
+  <div class="benefits-grid">
+    <article class="benefit-item"><h4>Benefício 1 — Perfil na Plataforma UNICANA</h4><p>Cada membro tem um perfil completo na plataforma oficial da UNICANA, com nome da empresa, descrição do negócio, localização, produtos ou serviços oferecidos, canais de contato e muito mais. Sua vitrine profissional, visível para toda a rede, 24 horas por dia.</p></article>
+    <article class="benefit-item"><h4>Benefício 2 — Acesso à Rede de +250 Empresários</h4><p>Acesso imediato ao diretório completo de membros da UNICANA, com possibilidade de busca por segmento, região e tipo de negócio. Encontre exatamente quem você precisa, quando precisar.</p></article>
+    <article class="benefit-item"><h4>Benefício 3 — Canal Exclusivo de Compra e Venda</h4><p>Um ambiente dedicado para membros publicarem ofertas, demandas, produtos disponíveis, serviços e oportunidades comerciais. O mercado da cachaça, concentrado em um único canal de alta qualidade.</p></article>
+    <article class="benefit-item"><h4>Benefício 4 — Participação em Eventos e Encontros</h4><p>Membros UNICANA têm acesso prioritário — e em muitos casos gratuito ou com desconto exclusivo — a feiras, encontros presenciais, degustações e eventos do setor onde a rede se encontra pessoalmente.</p></article>
+    <article class="benefit-item"><h4>Benefício 5 — Visibilidade da sua Marca</h4><p>A UNICANA divulga seus membros em seus canais oficiais — redes sociais, boletins, comunicados e materiais institucionais. Fazer parte da rede é também um selo de credibilidade dentro do setor.</p></article>
+    <article class="benefit-item"><h4>Benefício 6 — Voto nas Decisões Estratégicas</h4><p>A UNICANA é gerida de forma coletiva e transparente. Membros ativos têm voto nas decisões que afetam o rumo da associação — de eventos a regras de participação, de parcerias institucionais a novas iniciativas do grupo.</p></article>
+    <article class="benefit-item"><h4>Benefício 7 — Rede de Indicações Qualificadas</h4><p>Dentro da UNICANA, indicação vale ouro. Membros que precisam de um serviço ou produto perguntam primeiro para a rede. Estar aqui é estar no radar de quem decide.</p></article>
+    <article class="benefit-item"><h4>Benefício 8 — Suporte e Onboarding</h4><p>Ao entrar para a rede, você não está sozinho. Nossa equipe faz o onboarding completo, apresenta a plataforma, explica como aproveitar ao máximo a anuidade e garante que você esteja conectado desde o primeiro dia.</p></article>
+  </div>
+</section>
+
+<section class="steps-section reveal" id="como-funciona">
+  <div class="section-label">Seção 6</div>
+  <h2 class="section-title">Entrar para a UNICANA é simples. Sair do lugar é que não dá mais.</h2>
+  <p class="section-text">O processo de adesão foi desenhado para ser rápido, transparente e 100% online. Não tem burocracia desnecessária. Tem critério — porque a qualidade da rede depende de quem está dentro.</p>
+  <div class="steps-grid">
+    <article class="step-card"><div class="step-n">Etapa 1</div><h3 class="step-title">Cadastro</h3><p class="step-text">Preencha o formulário de adesão com suas informações pessoais e os dados do seu negócio: nome da empresa, CNPJ, segmento de atuação, localização e uma breve descrição do que você faz. Leva menos de 5 minutos.</p></article>
+    <article class="step-card"><div class="step-n">Etapa 2</div><h3 class="step-title">Análise</h3><p class="step-text">Nossa equipe analisa o cadastro para garantir que o seu perfil está alinhado com a proposta da UNICANA. Buscamos empresários do setor de cachaça em qualquer elo da cadeia produtiva — produção, distribuição, varejo, insumos ou serviços.</p></article>
+    <article class="step-card"><div class="step-n">Etapa 3</div><h3 class="step-title">Aprovação e pagamento</h3><p class="step-text">Empresas aprovadas recebem a confirmação por e-mail junto com o link para pagamento da anuidade. O processo é simples e pode ser feito via PIX, cartão de crédito ou boleto bancário.</p></article>
+    <article class="step-card"><div class="step-n">Etapa 4</div><h3 class="step-title">Boas-vindas à rede</h3><p class="step-text">Com o pagamento confirmado, seu acesso é liberado imediatamente. Você recebe o onboarding completo, o acesso à plataforma e é apresentado para a rede. A partir daí, é fazer negócio.</p></article>
+  </div>
+  <div class="highlight-block">"O cadastro é gratuito. A anuidade só é cobrada após a aprovação."</div>
+</section>
+
+<section class="pricing-section reveal" id="adesao">
+  <div class="pricing-glow"></div>
+  <div class="section-label" style="justify-content:center">Seção 7</div>
+  <h2 class="section-title" style="margin:0 auto 18px;max-width:900px">Uma anuidade. Acesso completo. Sem surpresas.</h2>
+  <p class="section-text" style="margin:0 auto;max-width:760px">A UNICANA tem um modelo simples e justo: você paga uma anuidade anual e tem acesso a tudo o que a rede oferece. Sem mensalidades variáveis, sem taxas escondidas, sem letras miúdas.</p>
+  <div class="pricing-card">
+    <div class="pricing-label-top">🥃 Membro UNICANA · Acesso anual completo</div>
+    <div class="pricing-main"><sup>R$</sup> [VALOR]</div>
+    <div class="pricing-period">por ano · ou em até X vezes no cartão</div>
+    <ul class="pricing-includes">
+      <li>Perfil completo na plataforma UNICANA</li>
+      <li>Acesso ao diretório de +250 membros</li>
+      <li>Canal exclusivo de compra e venda</li>
+      <li>Participação em eventos e encontros presenciais</li>
+      <li>Visibilidade da marca nos canais da UNICANA</li>
+      <li>Voto nas decisões estratégicas da associação</li>
+      <li>Rede de indicações qualificadas</li>
+      <li>Onboarding completo com suporte da equipe</li>
+      <li>Renovação anual com condições especiais para membros ativos</li>
+    </ul>
+    <a href="#" class="btn-primary" style="justify-content:center">Quero me cadastrar agora</a>
+    <p class="pricing-note">Pagamento via PIX, cartão de crédito ou boleto bancário.</p>
+    <p class="pricing-note">O cadastro é gratuito. A anuidade é cobrada apenas após aprovação.</p>
+  </div>
+</section>
+
+<section class="manifesto reveal" id="sobre">
+  <div class="section-label">Seção 8</div>
+  <div class="manifesto-grid">
+    <div class="manifesto-image">
+      <img src="novasfotos/f4d29d8e-88f6-460c-a194-e5118f4b6850.png" alt="Manifesto UNICANA">
+    </div>
+    <div>
+      <h2 class="section-title">A cachaça não precisa de mais um grupo. Precisa de uma estrutura.</h2>
+      <p class="manifesto-text">Durante anos, os empresários do setor de cachaça foram se conectando da mesma forma que todo mundo se conecta: por indicação, por acaso, por evento, por sorte. Uma conversa numa feira que virou parceria. Um contato trocado num alambique que se transformou em contrato. Uma mensagem no WhatsApp que abriu uma porta que ninguém esperava.<br><br>Isso funcionou. E ainda funciona.<br><br>Mas funcionou até o ponto que o informal consegue sustentar. E o setor cresceu além disso.<br><br>Hoje, com mais de 250 empresários reunidos em torno de uma causa comum — fortalecer a cachaça brasileira como produto, como negócio e como patrimônio — chegou a hora de dar o próximo passo.<br><br>A UNICANA é esse passo.<br><br>Não é uma substituição do que já existia. É a evolução. É pegar toda aquela energia, toda aquela vontade de fazer negócio, toda aquela paixão pelo produto — e dar a ela a estrutura que merece. Com cadastro seletivo. Com anuidade acessível. Com plataforma, visibilidade, eventos, regras claras e uma gestão comprometida com o crescimento de todos.<br><br>A cachaça é o destilado mais produzido do Brasil. É produto de exportação, é identidade cultural, é economia real em centenas de municípios. Ela merece — e precisa — de uma cadeia produtiva que funcione como tal.<br><br>A UNICANA veio para ser isso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section reveal" id="faq">
+  <div class="section-label">Seção 9</div>
+  <h2 class="section-title">Respondendo as principais dúvidas antes que você precise perguntar.</h2>
+  <div class="obj-grid">
+    <div class="obj-item">
+      <div class="obj-q">Preciso ser produtor de cachaça para entrar na UNICANA?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Não. A UNICANA é aberta para todos os elos da cadeia produtiva — produtores, alambicadores, distribuidores, atacadistas, varejistas, donos de bar e restaurante, fornecedores de embalagem, insumos, rótulos, barris, logística, marketing, jurídico e qualquer outro serviço voltado para o setor. Se o seu negócio tem alguma relação com cachaça, seu perfil é bem-vindo aqui.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">Como funciona o processo de seleção?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Fazemos uma análise do cadastro para garantir que o candidato realmente atua no setor. Não é um processo burocrático — é um filtro de qualidade para manter a rede relevante e confiável para todos os membros.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">Quanto custa a anuidade?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">O valor da anuidade é [R$ VALOR] por ano, com opção de parcelamento no cartão de crédito. O pagamento só é realizado após a aprovação do cadastro. O cadastro em si é gratuito.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">O que acontece depois que eu pago?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Seu acesso é liberado imediatamente. Você recebe um e-mail de boas-vindas com todas as instruções de acesso à plataforma e uma apresentação da rede. Nossa equipe faz o onboarding e garante que você esteja conectado e ativo desde o primeiro dia.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">A UNICANA substitui o grupo do WhatsApp?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Não substitui — amplia. O grupo continuará existindo como canal de comunicação rápida entre os membros. A plataforma da UNICANA é um upgrade: mais organização, mais visibilidade, mais funcionalidade para quem quer fazer negócio de verdade.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">Como funciona a renovação?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">A anuidade é renovada uma vez por ano. Membros ativos recebem condições especiais de renovação e têm prioridade em todos os benefícios da rede. Membros que não renovam perdem o acesso ao diretório, ao canal de negócios e à visibilidade na plataforma.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">Posso cancelar a qualquer momento?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Sim. A UNICANA não prende ninguém. Se por qualquer razão você decidir não renovar, basta não realizar o pagamento no vencimento da anuidade. Não há multa nem burocracia.</div></div>
+    </div>
+    <div class="obj-item">
+      <div class="obj-q">Existe algum código de conduta para os membros?<span class="plus">+</span></div>
+      <div class="obj-a"><div class="obj-a-inner">Sim. A UNICANA tem regras claras de comportamento dentro da rede — respeito mútuo, compromisso com informações verdadeiras no perfil, e responsabilidade nas negociações realizadas entre membros. Membros que violarem o código de conduta podem ter o acesso suspenso ou cancelado.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta reveal" id="contato">
+  <div class="final-cta-bg"></div>
+  <h2 class="final-title">A maior rede de negócios da cachaça brasileira está esperando por você.</h2>
+  <p class="final-sub">Mais de 250 empresários já entenderam que crescer sozinho tem limite. Que o mercado da cachaça precisa de estrutura, conexão e representatividade. Que o momento de formalizar e escalar essa rede chegou.<br><br>Agora é a sua vez de fazer parte disso. O cadastro leva menos de 5 minutos. É gratuito. E pode ser o começo da parceria que vai mudar o rumo do seu negócio.</p>
+  <div class="final-buttons">
+    <a href="#adesao" class="btn-primary">Quero fazer parte da UNICANA</a>
+    <a href="#" class="btn-secondary">Fale com a nossa equipe</a>
+  </div>
+  <p class="final-mini">Cadastro gratuito · Anuidade após aprovação · Acesso imediato</p>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <img src="LOGO.png" alt="UNICANA">
+    <div>
+      <div class="footer-brand-text">UNICANA</div>
+      <div class="footer-sub">UNICANA — Cadeia Nacional Produtiva da Cachaça</div>
+    </div>
+  </div>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-col-title">Navegação</div>
+      <p><a href="#sobre">Sobre a UNICANA</a> · <a href="#beneficios">Benefícios</a> · <a href="#como-funciona">Como funciona</a> · <a href="#adesao">Plano de adesão</a> · <a href="#faq">FAQ</a> · <a href="#contato">Contato</a></p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Contato</div>
+      <p>📧 contato@unicana.com.br</p>
+      <p>📱 WhatsApp: [número]</p>
+      <p>🌐 www.unicana.com.br</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Redes sociais</div>
+      <p>Instagram · LinkedIn · YouTube</p>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 UNICANA — Cadeia Nacional Produtiva da Cachaça. Todos os direitos reservados. CNPJ: [número]</div>
+</footer>
+
+<script>
+const cursor=document.getElementById('cursor');
+const cursorRing=document.getElementById('cursorRing');
+window.addEventListener('mousemove',(e)=>{
+  cursor.style.transform=`translate(${e.clientX-5}px,${e.clientY-5}px)`;
+  cursorRing.style.transform=`translate(${e.clientX-18}px,${e.clientY-18}px)`;
+});
+const scrollLine=document.getElementById('scrollLine');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  const p=h>0?window.scrollY/h*100:0;
+  scrollLine.style.width=`${p}%`;
+});
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){entry.target.classList.add('visible')}
+  });
+},{threshold:.18});
+reveals.forEach((el)=>observer.observe(el));
+document.querySelectorAll('.obj-item').forEach((item)=>{
+  const q=item.querySelector('.obj-q');
+  const a=item.querySelector('.obj-a');
+  q.addEventListener('click',()=>{
+    const open=item.classList.contains('active');
+    document.querySelectorAll('.obj-item').forEach((i)=>{
+      i.classList.remove('active');
+      i.querySelector('.obj-a').classList.remove('open');
+    });
+    if(!open){
+      item.classList.add('active');
+      a.classList.add('open');
+    }
+  });
+});
+</script>
+</body>
+</html>
